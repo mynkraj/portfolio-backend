@@ -17,11 +17,11 @@ public class Main {
         // Create context
         Context ctx = tomcat.addContext("", System.getProperty("java.io.tmpdir"));
 
-        // ✅ REGISTER SERVLET MANUALLY
-        Tomcat.addServlet(ctx, "contactServlet", new ContactServlet());
+        // ✅ REGISTER SERVLET (NAME MUST MATCH)
+        Tomcat.addServlet(ctx, "ContactServlet", new ContactServlet());
         ctx.addServletMappingDecoded("/contact", "ContactServlet");
 
-        tomcat.getConnector(); // trigger connector
+        tomcat.getConnector(); // initialize connector
 
         System.out.println("🚀 Tomcat started on port " + port);
 
