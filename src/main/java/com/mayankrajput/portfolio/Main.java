@@ -19,7 +19,7 @@ public class Main {
 
         // ✅ REGISTER SERVLET MANUALLY
         Tomcat.addServlet(ctx, "contactServlet", new ContactServlet());
-        ctx.addServletMappingDecoded("/contact", "contactServlet");
+        ctx.addServletMappingDecoded("/contact", "ContactServlet");
 
         tomcat.getConnector(); // trigger connector
 
