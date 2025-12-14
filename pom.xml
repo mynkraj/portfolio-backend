@@ -56,7 +56,7 @@
     <build>
         <plugins>
 
-            <!-- Create executable JAR -->
+            <!-- Shade plugin to create executable fat JAR -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
@@ -68,12 +68,21 @@
                             <goal>shade</goal>
                         </goals>
                         <configuration>
+
+                            <!-- This REMOVES the original-*.jar -->
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
+
+                            <!-- Set Main-Class explicitly -->
                             <transformers>
                                 <transformer
                                         implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>com.mayank.Main</mainClass>
+                                    <mainClass>com.mayankrajput.portfolio.Main</mainClass>
                                 </transformer>
                             </transformers>
+
+                            <!-- VERY IMPORTANT -->
+                            <finalName>app</finalName>
+
                         </configuration>
                     </execution>
                 </executions>
