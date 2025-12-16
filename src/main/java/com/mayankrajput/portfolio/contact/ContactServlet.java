@@ -16,7 +16,9 @@ public class ContactServlet extends HttpServlet {
 
     private static final List<String> ALLOWED_ORIGINS = Arrays.asList(
             "http://localhost:5500",
-            "https://mayankdeveloper.netlify.app"
+            "https://mayankdeveloper.netlify.app",
+            "https://mayanks.world",
+            "https://www.mayanks.world"
     );
 
     private void setCors(HttpServletRequest req, HttpServletResponse res) {
